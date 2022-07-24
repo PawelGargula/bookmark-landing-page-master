@@ -51,7 +51,7 @@ Legend: 1 pomodoro is 30min (25min + short break).
 
 I predict, that i will made it in 32 pomodoros (16 hours).
 
-Already elapsed: 5 pomodoros.
+Already elapsed: 15 pomodoros.
 
 ## My process
 
