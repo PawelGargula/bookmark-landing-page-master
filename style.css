@@ -1,0 +1,43 @@
+/* General settings */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 10px;
+
+    /* primary colors */
+    --primary-color: hsl(231, 69%, 60%);
+    --secondary-color: hsl(0, 94%, 66%);
+
+    /* neutral colors */
+    --neutral-color-light: hsl(229, 8%, 60%);
+    --neutral-color-dark: hsl(229, 31%, 21%);
+
+    /* padding around all content */
+    --overall-padding: 3rem
+}
+
+body {
+    font-size: 1.8rem;
+    font-family: 'Rubik', sans-serif;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* General styling */
+body > * {
+    padding: var(--overall-padding);
+}
