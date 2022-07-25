@@ -51,12 +51,21 @@ img {
 }
 
 .primary-header {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
     position: sticky;
     top: 0;
     background-color: white;
+}
+
+.max-width {
+    --max-width: 1100px;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.primary-header-container {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
 }
 
 .menu {
