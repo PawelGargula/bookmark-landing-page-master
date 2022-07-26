@@ -22,19 +22,6 @@
     --overall-padding: 3.6rem
 }
 
-/* General styling */
-body {
-    font-size: 1.8rem;
-    font-family: 'Rubik', sans-serif;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-}
-
-body>* {
-    padding: var(--overall-padding);
-}
-
 ul {
     list-style: none;
     padding: 0;
@@ -50,10 +37,31 @@ img {
     max-width: 100%;
 }
 
+button {
+    background-color: transparent;
+    font-family: 'Rubik', sans-serif;
+    border: none;
+    font-weight: 500;
+}
+
+/* General styling */
+body {
+    font-size: 1.8rem;
+    font-family: 'Rubik', sans-serif;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+body>* {
+    padding: var(--overall-padding);
+}
+
 .primary-header {
     position: sticky;
     top: 0;
     background-color: white;
+    z-index: 1;
 }
 
 .max-width {
@@ -139,15 +147,106 @@ img {
     }
 
     [data-menu-open] .login {
-        background-color: transparent;
         border: 2px solid white;
         border-radius: .5rem;
         color: white;
         letter-spacing: inherit;
         padding: calc(var(--gap) / 2);
         font-size: inherit;
-        font-weight: 500;
     }
+
+    [data-content-nr] button {
+        display: none;
+    }
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 11rem;
+}
+
+h1 {
+    font-size: 2.9rem;
+    font-weight: 500;
+}
+
+p {
+    color: var(--neutral-light-color);
+    font-size: 1.5rem;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-group button {
+    font-size: 1.4rem;
+    border-radius: 0.6rem;
+    box-shadow: 0 6px 6px 0 hsl(231deg 69% 60% / 20%);
+    padding: 1.4rem 1.8rem;
+}
+
+.primary-button {
+    background-color: var(--primary-color);
+    color: white;
+
+}
+
+.secondary-button {
+    background-color: #F7F7F7;
+}
+
+h2 {
+    font-size: 2.4rem;
+    font-weight: 500;
+    margin-bottom: 1.2rem;
+}
+
+/* Style tabs header */
+.tabs {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-block: 4rem 6.5rem;
+}
+
+.tabs button:first-child {
+    border-top: 1px solid var(--neutral-light-color-transparent);
+}
+
+.tabs button {
+    border-bottom: 1px solid var(--neutral-light-color-transparent);
+    color: var(--neutral-light-color);
+    font-size: 1.6rem;
+    padding: 1.6rem;
+    position: relative;
+    width: 100%;
+}
+
+.tabs button.tab-header-active {
+    color: black;
+}
+
+.tabs button.tab-header-active::after {
+    content: '';
+    position: absolute;
+    height: .4rem;
+    width: 50%;
+    background-color: var(--secondary-color);
+    bottom: 0;
+    right: 50%;
+    transform: translate(50%);
+}
+
+/* Style tabs content */
+[data-content-nr] {
+    display: none;
+}
+
+.tab-content-active {
+    display: block;
 }
 
 .contact {
