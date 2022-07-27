@@ -19,7 +19,7 @@
     --neutral-dark-color-transparent: hsla(229, 31%, 21%, .95);
 
     /* padding around all content */
-    --overall-padding: 3.6rem
+    --overall-padding: 3.2rem;
 }
 
 ul {
@@ -35,17 +35,20 @@ nav a {
 
 img {
     max-width: 100%;
+    display: block;
 }
 
 button {
     background-color: transparent;
-    font-family: 'Rubik', sans-serif;
     border: none;
+    color: var(--neutral-dark-color);
+    font-family: 'Rubik', sans-serif;
     font-weight: 500;
 }
 
 /* General styling */
 body {
+    color: var(--neutral-dark-color);
     font-size: 1.8rem;
     font-family: 'Rubik', sans-serif;
     padding: 0;
@@ -164,6 +167,30 @@ main {
     display: flex;
     flex-direction: column;
     gap: 11rem;
+    /* Use for shapes behind images */
+    overflow: hidden;
+}
+
+.shape {
+    position: relative;
+}
+
+.shape::after {
+    --shift: 3.5rem;
+    background-color: var(--primary-color);
+    border-radius: 100vmax;
+    content: '';
+    height: 100%;
+    right: var(--shift);
+    position: absolute;
+    top: var(--shift);
+    width: 100vmax;
+    z-index: -1;
+}
+
+.shape.first-image::after {
+    height: 80%;
+    left: var(--shift);
 }
 
 h1 {
@@ -174,18 +201,20 @@ h1 {
 p {
     color: var(--neutral-light-color);
     font-size: 1.5rem;
+    line-height: 1.5;
 }
 
 .button-group {
     display: flex;
     justify-content: space-between;
+    margin-top: var(--overall-padding);
 }
 
 .button-group button {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     border-radius: 0.6rem;
     box-shadow: 0 6px 6px 0 hsl(231deg 69% 60% / 20%);
-    padding: 1.4rem 1.8rem;
+    padding: 1.4rem 1.6rem;
 }
 
 .primary-button {
@@ -198,7 +227,7 @@ p {
     background-color: #F7F7F7;
 }
 
-h2 {
+h2, h3 {
     font-size: 2.4rem;
     font-weight: 500;
     margin-bottom: 1.2rem;
@@ -209,7 +238,7 @@ h2 {
     align-items: center;
     display: flex;
     flex-direction: column;
-    margin-block: 4rem 6.5rem;
+    margin-block: var(--overall-padding) calc(var(--overall-padding) * 2);
 }
 
 .tabs button:first-child {
@@ -226,14 +255,14 @@ h2 {
 }
 
 .tabs button.tab-header-active {
-    color: black;
+    color: var(--neutral-dark-color);
 }
 
 .tabs button.tab-header-active::after {
     content: '';
     position: absolute;
     height: .4rem;
-    width: 50%;
+    width: 45%;
     background-color: var(--secondary-color);
     bottom: 0;
     right: 50%;
@@ -247,6 +276,10 @@ h2 {
 
 .tab-content-active {
     display: block;
+}
+
+h3 {
+    margin-top: calc(var(--overall-padding) * 2.5);
 }
 
 .contact {
