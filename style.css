@@ -191,7 +191,7 @@ main {
 
 .shape.first-image::after {
     height: 80%;
-    left: var(--shift);
+    left: var(--shift-inline);
 }
 
 h1 {
