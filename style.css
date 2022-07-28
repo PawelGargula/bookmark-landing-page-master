@@ -54,8 +54,6 @@ body {
     padding: 0;
     margin: 0;
     text-align: center;
-    /* Use for shapes behind images */
-    overflow-x: hidden;
 }
 
 body>* {
@@ -169,6 +167,8 @@ main {
     display: flex;
     flex-direction: column;
     gap: 11rem;
+    /* Use for shapes behind images */
+    overflow-x: hidden;
 }
 
 .shape {
