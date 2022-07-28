@@ -170,52 +170,64 @@
       </div>
     </section>
 
-    <section>
+    <section class="questions">
       <h2>Frequently Asked Questions</h2>
 
       <p>Here are some of our FAQs. If you have any other questions you’d like
         answered please feel free to email us.</p>
 
-      <details>
+      <div>
         <!-- Question 1 -->
-        <summary>What is Bookmark?</summary>
+        <div  id="question-1" class="question" aria-expanded="false" aria-controls="answer-1">
+          <h3>What is Bookmark?</h3>
+          <button class="accordion-button"></button>
+        </div>
 
         <!-- Answer 1 -->
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt
+        <p id="answer-1" aria-labelledby="question-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt
           justo eget ultricies fringilla. Phasellus blandit ipsum quis quam ornare mattis.</p>
-      </details>
+      </div>
 
-      <details>
+      <div>
         <!-- Question 2 -->
-        <summary>How can I request a new browser?</summary>
+        <div id="question-2" class="question" aria-expanded="false" aria-controls="answer-2">
+          <h3>How can I request a new browser?</h3>
+          <button class="accordion-button"></button>
+        </div>
 
         <!-- Answer 2 -->
-        <p>Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula.
+        <p id="answer-2" aria-labelledby="question-2">Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula.
           Suspendisse imperdiet. Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa,
           ultricies non ligula. Suspendisse imperdie tVivamus luctus eros aliquet convallis ultricies.
           Mauris augue massa, ultricies non ligula. Suspendisse imperdiet.</p>
-      </details>
+      </div>
 
-      <details>
+      <div>
         <!-- Question 3 -->
-        <summary>Is there a mobile app?</summary>
+        <div id="question-3"  class="question" aria-expanded="false" aria-controls="answer-3">
+          <h3>Is there a mobile app?</h3>
+          <button class="accordion-button"></button>
+        </div>
 
         <!-- Answer 3 -->
-        <p>Sed consectetur quam id neque fermentum accumsan. Praesent luctus vestibulum dolor, ut condimentum
+        <p id="answer-3" aria-labelledby="question-3">Sed consectetur quam id neque fermentum accumsan. Praesent luctus vestibulum dolor, ut condimentum
           urna vulputate eget. Cras in ligula quis est pharetra mattis sit amet pharetra purus. Sed
           sollicitudin ex et ultricies bibendum.</p>
-      </details>
+      </div>
 
-      <details>
+      <div>
         <!-- Question 4 -->
-        <summary>What about other Chromium browsers?</summary>
+        <div id="question-4"  class="question" aria-expanded="false" aria-controls="answer-4">
+          <h3>What about other Chromium browsers?</h3>
+          <button class="accordion-button"></button>
+        </div>
 
         <!-- Answer 4 -->
-        <p>Integer condimentum ipsum id imperdiet finibus. Vivamus in placerat mi, at euismod dui. Aliquam
+        <p id="answer-4" aria-labelledby="question-4">Integer condimentum ipsum id imperdiet finibus. Vivamus in placerat mi, at euismod dui. Aliquam
           vitae neque eget nisl gravida pellentesque non ut velit.</p>
-      </details>
+      </div>
 
-      <button>More Info</button>
+      <button class="button primary-button">More Info</button>
     </section>
   </main>
 

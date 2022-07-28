@@ -164,6 +164,7 @@ body>* {
 }
 
 main {
+    --gap: 11rem;
     display: flex;
     flex-direction: column;
     gap: 11rem;
@@ -228,7 +229,8 @@ p {
     background-color: #F7F7F7;
 }
 
-h2, h3 {
+h2,
+h3 {
     font-size: 2.4rem;
     font-weight: 500;
     margin-bottom: 1.2rem;
@@ -312,7 +314,7 @@ h4 {
     margin-bottom: var(--margin-header-para);
 }
 
-h4 + p {
+h4+p {
     margin-top: var(--margin-header-para);
 }
 
@@ -324,6 +326,62 @@ h4 + p {
     width: 100%;
 }
 
+/* Style FAQ */
+.questions > h2 + p {
+    margin-bottom: calc(var(--overall-padding) * 1.6);
+} 
+
+.questions > div {
+    border-bottom: 1px solid var(--neutral-light-color-transparent);
+    text-align: left;
+}
+
+.question {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.questions h3 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-block: 2rem;
+}
+
+.accordion-button {
+    border: solid var(--primary-color);
+    border-width: 0 3px 3px 0;
+    height: 1.2rem;
+    padding: 0;
+    transform: translateY(-50%) rotate(45deg);
+    transition: transform .5s ease;
+    width: 1.2rem;
+}
+
+.question[aria-expanded="true"] .accordion-button {
+    border-color: var(--secondary-color);
+    transform: rotate(225deg);
+    transition: transform .5s ease;
+}
+
+.question[aria-expanded="false"] + p {
+    display: none;
+}
+
+.question[aria-expanded="true"] + p {
+    color: var(--neutral-dark-color-transparent);
+    display: block;
+    margin-top: .6rem;
+    margin-bottom: var(--overall-padding);
+}
+
+.questions button.primary-button {
+    padding-inline: 2.2rem;
+    margin-top: calc(var(--overall-padding) * 1.5);
+    margin-bottom: 9rem;
+}
+
+/* Style contact */
 .contact {
     background-color: var(--primary-color);
     color: white;

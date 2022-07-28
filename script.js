@@ -28,3 +28,14 @@ tabHeaders.forEach(tabHeader => {
         tabContent.classList.add('tab-content-active');
     });
 });
+
+// Accordion
+const questions = document.querySelectorAll('.question');
+
+questions.forEach(question => {
+    question.addEventListener('click', () => {
+        question.getAttribute('aria-expanded') === "true"
+        ? question.setAttribute('aria-expanded', "false")
+        :question.setAttribute('aria-expanded', "true");
+    });
+});
