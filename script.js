@@ -39,3 +39,28 @@ questions.forEach(question => {
         :question.setAttribute('aria-expanded', "true");
     });
 });
+
+// Email validation
+const aroundEmailInput = document.querySelector('.email-input');
+const emailInput = document.querySelector('input');
+const form = document.querySelector('form');
+
+const isEmailValid = (email) => email.match(/^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/);
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    if(isEmailValid(emailInput.value)) {
+        aroundEmailInput.classList.remove('invalid');
+        form.submit();
+    } else {
+        aroundEmailInput.classList.add('invalid');
+
+        // After first fail - add validation also for onInput event, so user will get instant feedback about validation (e.g if he correct his email, error message will disappear instantly)
+        emailInput.addEventListener('input', () => {
+            isEmailValid(emailInput.value)
+            ? aroundEmailInput.classList.remove('invalid')
+            : aroundEmailInput.classList.add('invalid');
+        });
+    }
+});
