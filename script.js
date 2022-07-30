@@ -55,6 +55,7 @@ form.addEventListener('submit', (e) => {
         form.submit();
     } else {
         aroundEmailInput.classList.add('invalid');
+        emailInput.focus();
 
         // After first fail - add validation also for onInput event, so user will get instant feedback about validation (e.g if he correct his email, error message will disappear instantly)
         emailInput.addEventListener('input', () => {
