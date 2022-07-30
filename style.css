@@ -6,8 +6,6 @@
 }
 
 :root {
-    font-size: 10px;
-
     /* primary colors */
     --primary-color: hsl(231, 69%, 60%);
     --secondary-color: hsl(0, 94%, 66%);
@@ -20,6 +18,10 @@
 
     /* padding around all content */
     --overall-padding: 3.2rem;
+    /* for border-radius in buttons and input */
+    --radius: .6rem;
+
+    font-size: 10px;
 }
 
 ul {
@@ -212,7 +214,7 @@ p {
     margin-top: var(--overall-padding);
 }
 
-.button {
+.rounded-element {
     font-size: 1.4rem;
     border-radius: 0.6rem;
     box-shadow: 0 4px 6px 0 hsl(231deg 69% 60% / 20%);
@@ -225,7 +227,7 @@ p {
 
 }
 
-.secondary-button {
+.neutral-button {   
     background-color: #F7F7F7;
 }
 
@@ -385,14 +387,82 @@ h4+p {
 .contact {
     background-color: var(--primary-color);
     color: white;
+    padding-block: calc(var(--overall-padding) * 1.8);
 }
+
+.contact p {
+    color: white;
+    font-size: 1.3rem;
+    letter-spacing: .3rem;
+}
+
+.contact h4 {
+    font-size: 2.3rem;
+    margin-block: 0 var(--overall-padding);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+}
+
+.secondary-button {
+    color: white;
+    background-color: var(--secondary-color);
+}
+
+input.rounded-element {
+    border: none;
+    width: 100%;
+    box-shadow: none;
+}
+
+input::placeholder {
+    color: var(--neutral-light-color);
+}
+
+.invalid input {
+    background-image: url("images/icon-error.svg");
+    background-repeat: no-repeat;
+    background-position: right 1.2rem center;
+    border: 2px solid var(--secondary-color);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.email-input.invalid::after {
+    content: "Whoops, make sure it's an email";
+    background-color: var(--secondary-color);
+    border-bottom-left-radius: var(--radius);
+    border-bottom-right-radius: var(--radius);
+    display: block;
+    font-style: italic;
+    font-size: 1.2rem;
+    padding: .5rem 1rem;
+    text-align: left;
+}
+
+/* Style footer */
 
 footer {
     background-color: var(--neutral-dark-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--overall-padding);
 }
 
 footer a {
     color: white;
+}
+
+footer nav ul {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.4rem;
+    gap: var(--overall-padding);
+    letter-spacing: .3rem;
 }
 
 ul[aria-label="social links"] {
@@ -400,7 +470,6 @@ ul[aria-label="social links"] {
     display: flex;
     gap: var(--overall-padding);
     justify-content: center;
-    padding-top: var(--overall-padding);
 }
 
 @media (min-width: 50em) {
