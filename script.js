@@ -41,7 +41,7 @@ questions.forEach(question => {
 });
 
 // Email validation
-const aroundEmailInput = document.querySelector('.email-input');
+const elementAroundEmailInput = document.querySelector('.email-input');
 const emailInput = document.querySelector('input');
 const form = document.querySelector('form');
 
@@ -51,17 +51,17 @@ form.addEventListener('submit', (e) => {
     e.preventDefault();
     
     if(isEmailValid(emailInput.value)) {
-        aroundEmailInput.classList.remove('invalid');
+        elementAroundEmailInput.classList.remove('invalid');
         form.submit();
     } else {
-        aroundEmailInput.classList.add('invalid');
+        elementAroundEmailInput.classList.add('invalid');
         emailInput.focus();
 
         // After first fail - add validation also for onInput event, so user will get instant feedback about validation (e.g if he correct his email, error message will disappear instantly)
         emailInput.addEventListener('input', () => {
             isEmailValid(emailInput.value)
-            ? aroundEmailInput.classList.remove('invalid')
-            : aroundEmailInput.classList.add('invalid');
+            ? elementAroundEmailInput.classList.remove('invalid')
+            : elementAroundEmailInput.classList.add('invalid');
         });
     }
 });
