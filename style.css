@@ -245,7 +245,7 @@ p {
 }
 
 .rounded-element {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     border-radius: 0.6rem;
     box-shadow: 0 4px 6px 0 hsl(231deg 69% 60% / 20%);
     padding: 1.4rem 1.6rem;
