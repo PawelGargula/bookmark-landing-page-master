@@ -393,7 +393,7 @@ h3 {
     margin-block: 2rem;
 }
 
-.accordion-button {
+.accordion-icon {
     border: solid var(--primary-color);
     border-width: 0 3px 3px 0;
     height: 1.2rem;
@@ -403,7 +403,7 @@ h3 {
     width: 1.2rem;
 }
 
-.question[aria-expanded="true"] .accordion-button {
+.question[aria-expanded="true"] .accordion-icon {
     border-color: var(--secondary-color);
     transform: rotate(225deg);
     transition: transform .5s ease;
