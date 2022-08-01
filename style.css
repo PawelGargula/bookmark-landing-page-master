@@ -78,7 +78,10 @@ body {
     height: 100vh;
 }
 
-.content>* {
+.content>header,
+.content>main,
+footer>section,
+footer>div {
     padding: var(--overall-padding);
 }
 
