@@ -392,7 +392,7 @@ h3 {
     width: 100%;
 }
 
-.questions h3 {
+.questions span {
     font-size: 1.4rem;
     font-weight: 500;
     margin-block: 2rem;
@@ -444,7 +444,8 @@ h3 {
     letter-spacing: .3rem;
 }
 
-.contact h4 {
+.contact span {
+    display: block;
     font-size: 2.3rem;
     font-weight: 500;
     margin-block: 0 var(--overall-padding);
