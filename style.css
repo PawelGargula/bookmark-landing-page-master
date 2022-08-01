@@ -38,11 +38,11 @@ nav a {
 a:hover,
 .tabs button:hover,
 .tabs button.tab-header-active:hover,
-.questions>div:hover {
+.questions>div>button:hover {
     color: var(--secondary-color);
 }
 
-[aria-label="social links"] svg:hover path {
+.social-links svg:hover path {
     fill: var(--secondary-color);
 }
 
@@ -385,9 +385,11 @@ h3 {
 
 .question {
     align-items: center;
+    cursor: pointer;
     display: flex;
     justify-content: space-between;
-    cursor: pointer;
+    padding: 0;
+    width: 100%;
 }
 
 .questions h3 {
@@ -522,7 +524,7 @@ footer nav ul {
     letter-spacing: .3rem;
 }
 
-ul[aria-label="social links"] {
+ul.social-links {
     align-items: center;
     display: flex;
     gap: var(--overall-padding);
