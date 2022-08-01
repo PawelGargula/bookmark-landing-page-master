@@ -80,7 +80,6 @@ body {
 
 .content>header,
 .content>main,
-footer>section,
 footer>div {
     padding: var(--overall-padding);
 }
@@ -506,7 +505,7 @@ footer {
     background-color: var(--neutral-dark-color);
 }
 
-footer > div {
+footer > div.max-width {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -647,12 +646,12 @@ ul.social-links {
         align-self: flex-start;
     }
 
-    footer > div {
+    footer > div.max-width {
         flex-direction: row;
         justify-content: space-between;
     }
 
-    footer > div > div:first-child {
+    footer > div.max-width > div:first-child {
         align-items: center;
         display: flex;
         gap: var(--overall-padding);
