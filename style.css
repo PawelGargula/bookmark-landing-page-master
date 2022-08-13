@@ -16,6 +16,8 @@
     --neutral-dark-color: hsl(229, 31%, 21%);
     --neutral-dark-color-transparent: hsla(229, 31%, 21%, .95);
 
+    /* Max width of all content */
+    --max-width: 1100px;
     /* padding around all content */
     --overall-padding: 3.2rem;
     /* for border-radius in buttons and input */
@@ -35,10 +37,10 @@ nav a {
     color: black;
 }
 
-a:hover,
-.tabs button:hover,
-.tabs button.tab-header-active:hover,
-.questions>div>button:hover {
+:is(a,
+    .tabs button,
+    .tabs button.tab-header-active,
+    .questions>div>button):hover {
     color: var(--secondary-color);
 }
 
@@ -78,7 +80,7 @@ body {
     height: 100vh;
 }
 
-.content>header,
+.content>header>div,
 .content>main,
 footer>div {
     padding: var(--overall-padding);
@@ -92,7 +94,6 @@ footer>div {
 }
 
 .max-width {
-    --max-width: 1100px;
     max-width: var(--max-width);
     margin: 0 auto;
 }
@@ -505,7 +506,7 @@ footer {
     background-color: var(--neutral-dark-color);
 }
 
-footer > div.max-width {
+footer>div.max-width {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -627,7 +628,7 @@ ul.social-links {
         margin-top: calc(var(--overall-padding) * 2);
     }
 
-    .contact > div {
+    .contact>div {
         margin-inline: auto;
         max-width: 450px;
     }
@@ -646,12 +647,12 @@ ul.social-links {
         align-self: flex-start;
     }
 
-    footer > div.max-width {
+    footer>div.max-width {
         flex-direction: row;
         justify-content: space-between;
     }
 
-    footer > div.max-width > div:first-child {
+    footer>div.max-width>div:first-child {
         align-items: center;
         display: flex;
         gap: var(--overall-padding);
